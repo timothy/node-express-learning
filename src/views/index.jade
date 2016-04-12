@@ -3,6 +3,23 @@
    -var list = ['1','2','18','...']
 html
     head
+        //- bower:css
+        link(rel='stylesheet', href='/lib/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/lib/font-awesome/css/font-awesome.min.css')
+        //- endbower
+
+        //- bower:js
+        script(src='/lib/jquery/dist/jquery.js')
+        script(src='/lib/bootstrap/dist/js/bootstrap.js')
+        //- endbower
+
+        //- inject:css
+        link(rel="stylesheet", href="/css/styles.css")
+        //- endinject
+
+        //- inject:js
+        script(src="/js/app.js")
+        //- endinject
         title Tim's App
     body(class='ClassBody')
         h1(id='GoodId') My Supper cool Jade File!
