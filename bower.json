@@ -26,13 +26,13 @@
         "dist/css/bootstrap.min.css",
         "less/bootstrap.less"
       ]
+    },
+    "font-awesome":{
+      "main":[
+        "less/font-awesome.less",
+        "css/font-awesome.min.css",
+        "scss/font-awesome.scss"
+      ]
     }
-  },
-  "font-awesome":{
-    "main":[
-      "less/font-awesome.less",
-      "css/font-awesome.min.css",
-      "scss/font-awesome.scss"
-    ]
   }
 }
