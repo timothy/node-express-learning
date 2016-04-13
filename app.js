@@ -14,7 +14,7 @@ app.set('view engine', '.hbs');
 
 app.get('/', function (req, res) {
     //res.send('Hellow World');
-    res.render('index' ,{list:['a','b']});
+    res.render('index' ,{title:'Hello From App.js',list:['a','b']});
 });
 
 app.get('/books', function (req, res) {
