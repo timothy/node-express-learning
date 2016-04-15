@@ -2,55 +2,46 @@
  * Created by tabradford on 4/13/2016.
  */
 var express = require('express');
-var app = express();
-
 var bookRouter = express.Router();
+var mongodb = require('mongodb').MongoClient;
+var objectID = require('mongodb').ObjectID;
 
 var router = function (nav) {
-    var books = [
-        {
-            title: 'Book Two Test',
-            genre: 'Fun',
-            author: 'Not me',
-            read: false
-        },
-        {
-            title: 'Book one Test',
-            genre: 'Sci Fi',
-            author: 'Not me',
-            read: false
-        },
-        {
-            title: 'Book 39 Test',
-            genre: 'Fict',
-            author: 'Not me',
-            read: false
-        },
-        {
-            title: 'Book 15 Test',
-            genre: 'Comp sci',
-            author: 'Not me',
-            read: false
-        }
-    ];
 
     bookRouter.route('/')
         .get(function (req, res) {
-            res.render('bookListView', {
-                title: 'Books',
-                nav: nav,
-                books: books
+            var url = 'mongodb://localhost:27017/libraryApp';
+
+            mongodb.connect(url, function (err, db) {
+                var collection = db.collection('books');
+
+                collection.find({}).toArray(function (err, results) {
+                    res.render('bookListView', {
+                        title: 'Books',
+                        nav: nav,
+                        books: results
+                    });
+                });
             });
         });
 
     bookRouter.route('/:id')
         .get(function (req, res) {
-            var id = req.params.id;
-            res.render('bookView', {
-                title: 'Books',
-                nav: nav,
-                book: books[id]
+            var id = new objectID(req.params.id);
+            var url = 'mongodb://localhost:27017/libraryApp';
+
+            mongodb.connect(url, function (err, db) {
+                var collection = db.collection('books');
+
+                collection.findOne({_id: id}, function (err, results) {
+                    res.render('bookView', {
+                        title: 'Books',
+                        nav: nav,
+                        book: results
+                    });
+                });
             });
+
         });
 
     return bookRouter;
