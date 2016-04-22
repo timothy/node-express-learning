@@ -12,3 +12,5 @@ Pluralsight web course.
 Although this web app is supposed to be a library manager app, it is really just a learning tool completed while going through an in-depth course on node, express, and other related tools. 
 
 The purpose of this app is to gain a complete understanding of the web technologies used while creating a full stack (both front end and back end) web application. It was built to give a practical application of things learned and programming practice using these technologies.
+
+I am thinking to use the technologies I learned through this course and applying it to a small project of my own.
