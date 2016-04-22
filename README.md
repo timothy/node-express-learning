@@ -7,6 +7,7 @@ This app will let any user login and view books and browse thier items.
 
 
 ## Motivation
+Pluralsight web course.
 
 Although this web app is supposed to be a library manager app, it is really just a learning tool completed while going through an in-depth course on node, express, and other related tools. 
 
