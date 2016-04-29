@@ -7,8 +7,8 @@
     <meta name="generator" content="Bootply"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- bower:css -->
-    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css"/>
     <!-- endbower -->
     <!-- bower:js -->
     <script src="/lib/jquery/dist/jquery.js"></script>
@@ -42,23 +42,23 @@
         <nav class="collapse navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
 
-                <%for(var i=0; i<nav.length; i++){%>
+                <% for(var i = 0; i < nav.length; i++){ %>
                 <li>
-                    <a href="<%=nav[i].Link%>">
-                        <%=nav[i].Text%>
+                    <a href="<%= nav[i].Link %>">
+                        <%= nav[i].Text %>
                     </a>
                 </li>
-                <%}%>
+                <% } %>
 
             </ul>
             <ul class="nav navbar-right navbar-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="glyphicon glyphicon-search"></i></a>
+                                class="glyphicon glyphicon-search"></i></a>
                     <ul class="dropdown-menu" style="padding:12px;">
                         <form class="form-inline">
                             <button type="submit" class="btn btn-default pull-right"><i
-                                    class="glyphicon glyphicon-search"></i></button>
+                                        class="glyphicon glyphicon-search"></i></button>
                             <input type="text" class="form-control pull-left" placeholder="Search">
                         </form>
                     </ul>
@@ -113,13 +113,18 @@
                     <div class="row">
                         <br>
                         <div class="col-md-2 col-sm-3 text-center">
-                        Sign In
+                            Sign In
+                            <form name="signInForm" action="/auth/signIn" method="post">
+                                User Name: <input type="text" name="userName" id="userName">
+                                Password: <input type="password" name="password" id="password">
+                                <input type="submit" value="Sign In">
+                            </form>
                         </div>
                         <div class="col-md-10 col-sm-9">
-                        Sign Up
+                            Sign Up
                             <form name="signUpForm" action="/auth/signUp" method="post">
-                                <input type="text" name="userName" id="userName">
-                                <input type="text" name="password" id="password">
+                                User Name: <input type="text" name="userName" id="userName">
+                                Password: <input type="password" name="password" id="password">
                                 <input type="submit" value="Sign up">
                             </form>
                         </div>
@@ -130,7 +135,7 @@
 
 
                     <a href="/" class="btn btn-primary pull-right btnNext">More <i
-                            class="glyphicon glyphicon-chevron-right"></i></a>
+                                class="glyphicon glyphicon-chevron-right"></i></a>
 
 
                 </div>
