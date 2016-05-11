@@ -11,11 +11,13 @@ var books = [
         title: 'A tale of New places',
         genre: 'Fun',
         author: 'Not me',
+        bookId: 656,
         read: false
     },
     {
         title: 'Sound King',
         genre: 'Sci Fi',
+        bookId: 24280,
         author: 'Not me',
         read: false
     },
